@@ -52,7 +52,7 @@ passwd nombre_de_usuario
 nano /etc/sudoers
 
 #Activando Servicios
-systemctl enable dhcpcd  NetworkManager
+systemctl enable dhcpcd  NetworkManager iwd
 # Si instalaron paquetes de Bluetooth activen el servicio
 systemctl enable bluetooth
 
