@@ -35,9 +35,13 @@ lsblk
 #Crear particiones
 cfdisk /dev/sda
 
-# Formateando particiones
+# Formateando particiones 
+# Caso UEFI EN CASO DE QUE SEA SOLO LINUX NO DUALBOOT
 # Formateo de la Partición de arranque:
 mkfs.fat -F 32 /dev/sda1
+# Caso BIOS
+mkfs.ext4 -L "Bios" /dev/sda1
+
 #Formateo de la Partición de Root y Home:
 mkfs.ext4 /dev/sda2
 mkfs.ext4 /dev/sda3
