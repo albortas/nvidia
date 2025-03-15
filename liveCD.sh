@@ -55,8 +55,12 @@ mkdir -p /mnt/home
 
 # Verificamos que se hayan creado correctamente los directorios
 ls /mnt/
-# Montando la partición de Arranque /efi
+# Solo montar en caso de que se un solo sistema Linux NO DUALBOOT
+# En caso de DUALBOOT NO MONTAR /boot en BIOS
+# Montando la partición de Arranque /efi(En caso de UEFI)
 mount /dev/sda1 /mnt/efi
+# Montando la particion de Arranque /boot
+mount /dev/sda1 /mnt/boot
 # Montando la partición /home
 mount /dev/sda3 /mnt/home
 
